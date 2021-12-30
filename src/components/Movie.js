@@ -3,8 +3,10 @@ import { getMovies } from "../state/movies";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { addToFavorites } from "../state/users";
-
+import { successAlert } from "../utils/alerts";
+import { useHistory } from "react-router";
 export function Movie() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const location = useLocation();
   const id = location.pathname.split("/").pop();
@@ -61,7 +63,18 @@ export function Movie() {
                 <p className="title is-4">
                   {pelicula.Title}{" "}
                   {user.id ? (
-                    <button onClick={() => dispatch(addToFavorites(pelicula))}>
+                    <button
+                      onClick={() =>
+                        dispatch(addToFavorites(pelicula))
+                          .then(() =>
+                            successAlert(
+                              "Hecho",
+                              "Pelicula agregada a favoritos"
+                            )
+                          )
+                          .then(() => history.push("/movies"))
+                      }
+                    >
                       Add fav
                     </button>
                   ) : null}

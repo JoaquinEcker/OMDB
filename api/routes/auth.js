@@ -17,11 +17,11 @@ router.post("/logout", (req, res) => {
   res.status(200).send([]);
 });
 
-router.get("/me", logueado, (req, res) => {
-  console.log("ACAAA REQQQ", req.user);
-  if (req.user) res.send(req.user);
-  else res.sendStatus(401);
-});
+// router.get("/me", logueado, (req, res) => {
+//   console.log("ACAAA REQQQ", req.user);
+//   if (req.user) res.send(req.user);
+//   else res.sendStatus(401);
+// });
 
 module.exports = router;
 

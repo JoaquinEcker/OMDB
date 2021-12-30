@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { removeFromFavorites } from "../state/users";
+import { successAlert } from "../utils/alerts";
 export function Favorites() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
@@ -18,6 +19,7 @@ export function Favorites() {
   function handleDelete(id) {
     axios
       .delete(`/api/favorites?userId=${user.id}&movieId=${id}`)
+      .then(() => successAlert("Hecho", "Pelicula eliminada de favoritos"))
       .then((_) => favs.filter((movie) => movie.id !== id))
       .then((favs) => setFavs(favs));
   }
@@ -30,7 +32,6 @@ export function Favorites() {
             <li key={i}>
               {movie.Title}, {movie.Year} -
               <button onClick={() => handleDelete(movie.id)}>
-                {/* <button onClick={() => dispatch(removeFromFavorites(movie.id))}> */}
                 <FaTrash />
               </button>
             </li>

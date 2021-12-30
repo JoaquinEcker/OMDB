@@ -17,7 +17,11 @@ export function MoviesList() {
               <div className="card-image">
                 {/* <figure className="image"> */}
                 <img
-                  src={movie.Poster}
+                  src={
+                    movie.Poster == "N/A"
+                      ? "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg"
+                      : movie.Poster
+                  }
                   alt="Placeholder image"
                   style={{ height: "500px", width: "500px" }}
                 />

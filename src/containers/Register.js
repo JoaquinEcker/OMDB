@@ -1,7 +1,8 @@
 import axios from "axios";
 import useInput from "../hooks/useInput";
 import { useHistory } from "react-router";
-
+import { successAlert } from "../utils/alerts";
+import { errorAlert } from "../utils/alerts";
 export function Register() {
   const history = useHistory();
   const email = useInput("");
@@ -14,9 +15,9 @@ export function Register() {
         email: email.value,
         password: password.value,
       })
-      .then(alert(`Registro Exitoso`))
+      .then(() => successAlert("Exito!", "Logueate para continuar"))
       .then(history.push("/login"))
-      .catch((err) => alert(`Error en el logueo, intentelo nuevamente`));
+      .catch(() => errorAlert("Error", "Complete los datos correctamente!"));
   };
 
   return (
@@ -25,6 +26,16 @@ export function Register() {
         onSubmit={handleRegisterClick}
         style={{ marginTop: "5%", width: "30%" }}
       >
+        <h2
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontWeight: "bold",
+          }}
+        >
+          Registrar usuario
+        </h2>
+        <br />
         <div className="field">
           <p className="control has-icons-left has-icons-right">
             <input
@@ -54,7 +65,10 @@ export function Register() {
             </span>
           </p>
         </div>
-        <div className="field">
+        <div
+          className="field"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           <p className="control">
             <button class="button is-success" type="submit" size="large">
               Registrarme

@@ -5,11 +5,26 @@ import {
   createAction,
 } from "@reduxjs/toolkit";
 
-export const sendLoginRequest = createAsyncThunk("LOGIN", (obj) => {
-  return axios
-    .post("http://localhost:3001/api/auth/login", obj)
-    .then((r) => r.data);
-});
+export const setUser = createAction("SET_USER");
+
+export const sendLoginRequest = createAsyncThunk(
+  "LOGIN",
+  ({ email, password, errorAlert, successAlert }) => {
+    return axios
+      .post("http://localhost:3001/api/auth/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        successAlert(
+          "Bienvenido nuevamente",
+          "Hora de buscar series y películas!"
+        );
+        return res.data;
+      })
+      .catch(() => errorAlert("Error de logueo", "Intentelo nuevamente"));
+  }
+);
 
 export const sendLogoutRequest = createAsyncThunk("LOGOUT", () => {
   return axios
@@ -27,17 +42,14 @@ export const addToFavorites = createAsyncThunk(
   }
 );
 
-export const setUser = createAction("SET_USER");
-
-const userReducer = createReducer([], {
-  // [persistUser.fulfilled]: (state, action) => action.payload,
-  [sendLoginRequest.fulfilled]: (state, action) => action.payload,
-  [sendLogoutRequest.fulfilled]: (state, action) => action.payload,
-  [addToFavorites.fulfilled]: (state, action) => action.payload,
-  [setUser]: (state, action) => {
-    console.log(action.payload);
-    return action.payload;
-  },
-});
+const userReducer = createReducer(
+  {},
+  {
+    [setUser]: (state, action) => (state = action.payload),
+    [sendLoginRequest.fulfilled]: (state, action) => (state = action.payload),
+    [sendLogoutRequest.fulfilled]: (state, action) => action.payload,
+    [addToFavorites.fulfilled]: (state, action) => action.payload,
+  }
+);
 
 export default userReducer;
