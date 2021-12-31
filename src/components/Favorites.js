@@ -19,22 +19,29 @@ export function Favorites() {
   function handleDelete(id) {
     axios
       .delete(`/api/favorites?userId=${user.id}&movieId=${id}`)
-      .then(() => successAlert("Hecho", "Pelicula eliminada de favoritos"))
+      .then(() => successAlert("Hecho", "Película eliminada de favoritos"))
       .then((_) => favs.filter((movie) => movie.id !== id))
       .then((favs) => setFavs(favs));
   }
 
   if (favs) {
     return (
-      <div>
+      <div className="favs">
+        <h1 className="favsTitle">Tus películas favoritas</h1>
+        <hr />
         {favs.map((movie, i) => {
           return (
-            <li key={i}>
-              {movie.Title}, {movie.Year} -
-              <button onClick={() => handleDelete(movie.id)}>
-                <FaTrash />
-              </button>
-            </li>
+            <div>
+              <li key={i} style={{ margin: "4px 0" }}>
+                {movie.Title}, {movie.Year}{" "}
+                <button
+                  onClick={() => handleDelete(movie.id)}
+                  // style={{ marginLeft: "1%" }}
+                >
+                  <FaTrash />
+                </button>
+              </li>
+            </div>
           );
         })}
       </div>

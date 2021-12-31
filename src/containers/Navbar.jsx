@@ -67,7 +67,7 @@ export function Navbar() {
             <div className="navbar-item">
               <div className="buttons">
                 {user.id ? (
-                  <div>
+                  <div style={{ display: "flex" }}>
                     <div className="navbar-item">
                       <p>{user.email}!</p>
                     </div>

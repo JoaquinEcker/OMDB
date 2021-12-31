@@ -11,20 +11,14 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../state/users.js";
+import { checkLogin } from "../state/users.js";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("/api/auth/me")
-      .then((res) => res.data)
-      .then((user) => {
-        console.log("ACAAA", user);
-        dispatch(setUser(user));
-      })
-      .catch(() => console.log("Sin iniciar sesion"));
-  });
+    dispatch(checkLogin());
+  }, []);
 
   return (
     <div className="h-screen">

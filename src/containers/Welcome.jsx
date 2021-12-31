@@ -15,7 +15,11 @@ export function Welcome() {
 
   return (
     <div id="dad" className="welcome">
-      <form className="row" onSubmit={handleSubmit}>
+      <form
+        className="row"
+        onSubmit={handleSubmit}
+        style={{ marginTop: "-100px" }}
+      >
         <div className="search" style={{ marginTop: "250px" }}>
           Busca series y peliculas
         </div>

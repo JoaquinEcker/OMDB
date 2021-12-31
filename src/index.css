@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500 !important ;
@@ -12,7 +16,10 @@ code {
 }
 
 #dad {
+  justify-content: center;
   display: flex;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .card1 {
@@ -55,4 +62,17 @@ code {
   justify-content: center;
   margin-top: 30px;
   text-align: center;
+}
+
+.favs {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.favsTitle {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
 }

@@ -7,11 +7,18 @@ import {
 
 export const setUser = createAction("SET_USER");
 
+export const checkLogin = createAsyncThunk("USER", () => {
+  return axios
+    .get("api/auth/me")
+    .then((info) => info.data)
+    .catch(() => console.log("Sin iniciar sesion"));
+});
+
 export const sendLoginRequest = createAsyncThunk(
   "LOGIN",
   ({ email, password, errorAlert, successAlert }) => {
     return axios
-      .post("http://localhost:3001/api/auth/login", {
+      .post("api/auth/login", {
         email,
         password,
       })
@@ -27,9 +34,7 @@ export const sendLoginRequest = createAsyncThunk(
 );
 
 export const sendLogoutRequest = createAsyncThunk("LOGOUT", () => {
-  return axios
-    .post("http://localhost:3001/api/auth/logout")
-    .then((r) => r.data);
+  return axios.get("api/auth/logout").then((r) => r.data);
 });
 
 export const addToFavorites = createAsyncThunk(
@@ -46,6 +51,7 @@ const userReducer = createReducer(
   {},
   {
     [setUser]: (state, action) => (state = action.payload),
+    [checkLogin.fulfilled]: (state, action) => (state = action.payload),
     [sendLoginRequest.fulfilled]: (state, action) => (state = action.payload),
     [sendLogoutRequest.fulfilled]: (state, action) => action.payload,
     [addToFavorites.fulfilled]: (state, action) => action.payload,
