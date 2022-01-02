@@ -10,6 +10,7 @@ const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
 const routes = require("./routes");
 const { User } = require("./models");
+require("dotenv").config();
 
 app.use(morgan("tiny"));
 app.use(express.json());
@@ -68,12 +69,12 @@ app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });
 
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 
 db.sync({ force: false })
   .then(() => {
-    app.listen(PORT, () => console.log(`server listenning on port ${PORT}`));
+    app.listen(process.env.REACT_APP_PORT, () =>
+      console.log(`server listenning on port ${process.env.REACT_APP_PORT}`)
+    );
   })
   .catch(console.error);
-
-// api key 959ee6fb

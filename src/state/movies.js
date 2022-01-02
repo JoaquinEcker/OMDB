@@ -1,9 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+require("dotenv").config();
 
 export const getMovies = createAsyncThunk("MOVIE", (value) => {
   return axios
-    .get(`https://www.omdbapi.com/?apikey=959ee6fb&i=${value}`)
+    .get(
+      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_KEY}&i=${value}`
+    )
     .then((r) => r.data);
 });
 
