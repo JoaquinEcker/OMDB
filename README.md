@@ -1,6 +1,7 @@
 ### OMDB, Movie Search
 
 ### Funcionalidades
+Single page application construida con React la cual consume la REST API OMDB movies
 
 - Buscar películas y listarlas.
 - Poder ver los detalles de una película en particular.
@@ -16,8 +17,8 @@
 - Ver el perfil de un usuario con sus películas favoritas.
 
 <p float="left">
-<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-44-42.png" width ="470" height = "260" >
-<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-45-24.png" width ="470" height = "260" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-44-42.png" width ="400" height = "230" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-45-24.png" width ="400" height = "230" >
 </p>
 
 <p float="left">
