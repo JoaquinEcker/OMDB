@@ -1,4 +1,4 @@
-### OMDB, Movie Search
+# OMDB, Movie Search
 
 ### Details
 Single page application built in React consuming the REST API OMDB. Shows a list of news linking to its source and allows to add them as Favorites.
