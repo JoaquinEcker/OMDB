@@ -1,20 +1,20 @@
 ### OMDB, Movie Search
 
-### Funcionalidades
-Single page application construida con React la cual consume la REST API OMDB movies
+### Details
+Single page application built in React consuming the REST API OMDB. Shows a list of news linking to its source and allows to add them as Favorites.
 
-- Buscar películas y listarlas.
-- Poder ver los detalles de una película en particular.
-- Crear Usuarios.
-- Loggearse y desloggearse con un usuario.
-- Poder agregar una película a tu lista de favoritos.
-- Ver tu lista de películas favoritas.
-- Poder sacar películas de tu lista de favoritos.
+- Search movies & series
+- See the details of a particular movie.
+- Create users.
+- Login and logout with users.
+- Add a movie to your favorites list.
+- Look at your favorite movies list.
+- Delete movies from your favorites movies list.
 
-### En desarrollo
+### In development
 
-- Buscar Usuarios.
-- Ver el perfil de un usuario con sus películas favoritas.
+- Search for users.
+- See a user favorites movies list.
 
 <p float="left">
 <img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-44-42.png" width ="400" height = "190" >
