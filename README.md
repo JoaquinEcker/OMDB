@@ -1,6 +1,4 @@
-![logop5](https://p5-hall-of-fame.s3.amazonaws.com/p5logo.png)
-
-OMDB, Movie Search
+### OMDB, Movie Search
 
 ### Funcionalidades
 
@@ -17,3 +15,26 @@ OMDB, Movie Search
 - Buscar Usuarios.
 - Ver el perfil de un usuario con sus películas favoritas.
 
+<p float="left">
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-44-42.png" width ="481" height = "260" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-45-24.png" width ="481" height = "260" >
+</p>
+
+<p float="left">
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-52-48.png" width ="481" height = "260" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-53-55.png" width ="481" height = "260" >
+</p>
+
+
+<p float="left">
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-56-11.png" width ="481" height = "260" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-55-10.png" width ="481" height = "260" >
+</p>
+
+
+<p float="left">
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-55-36.png" width ="481" height = "260" >
+<img src="public/preVisual/Captura%20de%20pantalla_2022-01-18_13-57-21.png" width ="481" height = "260" >
+</p>
+
+![](public/preVisual/Captura%20de%20pantalla_2022-01-18_13-57-30.png)
