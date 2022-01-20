@@ -1,9 +1,9 @@
 # OMDB, Movie Search
 
 ### Details
-Single page application built in React consuming the REST API OMDB. Shows a list of news linking to its source and allows to add them as Favorites.
+Single page application built in React consuming the REST API OMDB.
 
-- Search movies & series
+- Search movies & series.
 - See the details of a particular movie.
 - Create users.
 - Login and logout with users.
